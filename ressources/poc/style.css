@@ -1,0 +1,24 @@
+map {
+  position: relative;
+}
+
+area {
+  left: 34px;
+  top: 2px;
+  right: auto;
+  bottom: auto;
+}
+
+area {
+  left: 3px;
+  top: 148px;
+  right: auto;
+  bottom: auto;
+}
+
+area {
+  left: 3px;
+  top: 396px;
+  right: auto;
+  bottom: auto;
+}
