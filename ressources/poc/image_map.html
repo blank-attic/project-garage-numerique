@@ -4,13 +4,32 @@
 
 <p>Click on the head, the body or foots of this robot to go on different parts of the website:</p>
 
-<img src="Robot.png" width="255" height="495" alt="robot" usemap="#robot">
+<img src="gifTete.png" width="600" height="829" alt="robot" usemap="#robot">
 
 <map name="robot">
-  <area shape="rect" coords="34,2,203,121" alt="Tête" href="www.google.fr">
-  <area shape="rect" coords="3,148,252,310" alt="Tronc" href="mercur.htm">
-  <area shape="rect" coords="3,396,213,490" alt="Pied" href="venus.htm">
+  <area id="head" shape="rect" coords="101,175,477,342" alt="head" href="www.google.fr">
+  <area id="body" shape="rect" coords="101,343,477,581" alt="body" href="mercur.htm">
+  <area id="foot" shape="rect" coords="101,583,477,695" alt="foots" href="venus.htm">
 </map>
 
+<!-- <script>
+$(document).ready(function() {
+    if($('#location-map')) {
+        $('#location-map area').each(function() {
+            var id = $(this).attr('id');
+            $(this).mouseover(function() {
+                $('#overlay'+id).show();
+
+            });
+
+            $(this).mouseout(function() {
+                var id = $(this).attr('id');
+                $('#overlay'+id).hide();
+            });
+
+        });
+    }
+});
+</script> -->
 </body>
 </html>

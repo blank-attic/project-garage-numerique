@@ -1,22 +1,26 @@
+area :hover {
+  border: 1px solid black;
+}
+
 map {
   position: relative;
 }
 
-area {
-  left: 34px;
+#head {
+  left: 101px;
   top: 2px;
-  right: auto;
-  bottom: auto;
+  right: 477px;
+  bottom: 342px;
 }
 
-area {
+#tronc {
   left: 3px;
   top: 148px;
   right: auto;
   bottom: auto;
 }
 
-area {
+#pied {
   left: 3px;
   top: 396px;
   right: auto;
