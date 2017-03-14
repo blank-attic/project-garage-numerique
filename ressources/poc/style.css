@@ -1,4 +1,4 @@
-area :hover {
+/*area :hover {
   border: 1px solid black;
 }
 
@@ -26,3 +26,9 @@ map {
   right: auto;
   bottom: auto;
 }
+
+map .shadow_area:hover{
+    -moz-box-shadow: inset -2px -2px 2px 2px #CCC;
+    -webkit-box-shadow: inset -2px -2px 2px 2px #CCC;
+    box-shadow: inset -2px -2px 2px 2px #CCC;
+} */

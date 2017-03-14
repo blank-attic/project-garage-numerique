@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <title></title>
+    </head>
+    <body>
+        <img src="http://www.tfo.be/jobs/axa/premiumplus/img/empty.gif" width="300" height="350" border="0" usemap="#location-map" id="emptygif" />
+        <div id="overlayr1">&nbsp;</div>
+        <div id="overlayr2">&nbsp;</div>
+        <img src="http://2.bp.blogspot.com/_nP6ESfPiKIw/SlOGugKqaoI/AAAAAAAAACs/6jnPl85TYDg/s1600-R/monkey300.jpg" width="300" height="350" border="0" />
+        <map name="location-map" id="location-map">
+            <area shape="rect" coords="0,0,300,160" href="#" id="r1" />
+            <area shape="rect" coords="0,161,300,350" href="#" id="r2"/>
+        </map>
+    </body>
+    <script>
+
+     if(document.querySelector('#location-map')) {
+         var e = document.querySelectorAll('#location-map area');
+         for(var element = 0; element < e.length; element++){
+             console.log(e);
+             console.log("element"+element)
+             var id = e[element].getAttribute('id');
+             e[element].addEventListener("mouseover", (function(id) {
+                 return function() {
+                     document.querySelector('#overlay'+id).style.display = "block";
+                 }
+             })(id));
+
+             e[element].addEventListener("mouseout", (function(id) {
+                 return function() {
+                     document.querySelector('#overlay'+id).style.display = "none";
+                 }
+             })(id));
+         }
+     }
+    </script>
+</html>

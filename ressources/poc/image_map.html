@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
 <body>
 
-<p>Click on the head, the body or foots of this robot to go on different parts of the website:</p>
+  <p>Click on the head, the body or foots of this robot to go on different parts of the website:</p>
 
-<img src="gifTete.png" width="600" height="829" alt="robot" usemap="#robot">
+  <img src="http://www.tfo.be/jobs/axa/premiumplus/img/empty.gif" width="600" height="829" border="0" usemap="#location-map" id="emptygif">
+  <div id="overlayr1">&nbsp;</div>
+  <div id="overlayr2">&nbsp;</div>
+  <img src="gifTete.png" width="600" height="829" border="0" />
+  <map name="location-map" id="location-map">
+    <area id="r1" shape="rect" coords="101,175,477,342"  href="www.google.fr">
+    <area id="r2" shape="rect" coords="101,343,477,581"  href="mercur.htm">
+    <area id="r3" shape="rect" coords="101,583,477,695"  href="venus.htm">
+  </map>
+  <script>
 
-<map name="robot">
-  <area id="head" shape="rect" coords="101,175,477,342" alt="head" href="www.google.fr">
-  <area id="body" shape="rect" coords="101,343,477,581" alt="body" href="mercur.htm">
-  <area id="foot" shape="rect" coords="101,583,477,695" alt="foots" href="venus.htm">
-</map>
+   if(document.querySelector('#location-map')) {
+       var e = document.querySelectorAll('#location-map area');
+       for(var element = 0; element < e.length; element++){
+           console.log(e);
+           console.log("element"+element)
+           var id = e[element].getAttribute('id');
+           e[element].addEventListener("mouseover", (function(id) {
+               return function() {
+                   document.querySelector('#overlay'+id).style.display = "block";
+               }
+           })(id));
 
-<!-- <script>
-$(document).ready(function() {
-    if($('#location-map')) {
-        $('#location-map area').each(function() {
-            var id = $(this).attr('id');
-            $(this).mouseover(function() {
-                $('#overlay'+id).show();
-
-            });
-
-            $(this).mouseout(function() {
-                var id = $(this).attr('id');
-                $('#overlay'+id).hide();
-            });
-
-        });
-    }
-});
-</script> -->
+           e[element].addEventListener("mouseout", (function(id) {
+               return function() {
+                   document.querySelector('#overlay'+id).style.display = "none";
+               }
+           })(id));
+       }
+   }
+  </script>
 </body>
 </html>
