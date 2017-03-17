@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <style>
+      .wrapper {
+        position : relative;
+        display : inline-block;
+        margin-left: 30%;
+        width: 40%;
+      }
+
+      .overlay {
+        position : absolute;
+        width : 100%;
+        height : 100%;
+        top : 0;
+        left : 0;
+      }
+
+    img {
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 10em;
+      color: pink;
+    }
+       #body {
+        height : 30%;
+       }
+
+       #head {
+          height : 42%;
+       }
+
+       #foot {
+         height : 20%;
+       }
+
+       .part a:hover, .part a:active {
+         background-color : rgba(0,0,0,0);
+         border: 5px solid pink;
+       }
+
+       .part-link {
+         display : block;
+         width : 100%;
+         height : 100%;
+       }
+
+    </style>
+
+  </head>
+  <body>
+    <h1> Menu de navigation </h1>
+
+    <div class="wrapper">
+      <img id="img" src="Robot.png" />
+      <div class="overlay">
+        <div id="head" class="part">
+          <a href="head.html" class="part-link"></a>
+        </div>
+        <div id="body" class="part">
+          <a href="body.html" class="part-link"></a>
+        </div>
+        <div id="foot" class="part">
+          <a href="head.html" class="part-link"></a>
+        </div>
+      </div>
+    </div>
+  <script type="text/javascript">
+    var img = document.getElementById('img');
+    document.getElementById('head').addEventListener('mouseover', function() {
+      img.src = 'gifTete.gif';
+    });
+    document.getElementById('body').addEventListener('mouseover', function() {
+      img.src = 'gifBuste.gif';
+    });
+  </script>
+  </body>
+</html>

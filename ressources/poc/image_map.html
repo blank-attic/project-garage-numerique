@@ -7,15 +7,19 @@
 
   <p>Click on the head, the body or foots of this robot to go on different parts of the website:</p>
 
-  <img src="http://www.tfo.be/jobs/axa/premiumplus/img/empty.gif" width="600" height="829" border="0" usemap="#location-map" id="emptygif">
-  <div id="overlayr1">&nbsp;</div>
-  <div id="overlayr2">&nbsp;</div>
-  <img src="gifTete.png" width="600" height="829" border="0" />
+
+  <img src="gifTete.png" width="600" height="829" border="0"  usemap="#location-map" />
   <map name="location-map" id="location-map">
+    <div id="overlayr1">&nbsp;</div>
+    <div id="overlayr2">&nbsp;</div>
+    <div id="overlayr3">&nbsp;</div>
+    <div id="class2">&nbsp;</div>
     <area id="r1" shape="rect" coords="101,175,477,342"  href="www.google.fr">
     <area id="r2" shape="rect" coords="101,343,477,581"  href="mercur.htm">
     <area id="r3" shape="rect" coords="101,583,477,695"  href="venus.htm">
   </map>
+</body>
+
   <script>
 
    if(document.querySelector('#location-map')) {
@@ -32,11 +36,11 @@
 
            e[element].addEventListener("mouseout", (function(id) {
                return function() {
-                   document.querySelector('#overlay'+id).style.display = "none";
+                   document.getElementById("modifier_class").className = "class2";
                }
            })(id));
        }
    }
+
   </script>
-</body>
 </html>

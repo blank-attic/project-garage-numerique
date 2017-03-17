@@ -1,34 +1,54 @@
-/*area :hover {
-  border: 1px solid black;
+body,html {
+    margin:0;
+}
+/*#emptygif {
+    position:absolute;
+    z-index:200;*/
+
+
+#location-map {
+  /*position:absolute;
+  z-index:200;*/
 }
 
-map {
-  position: relative;
+#overlayr1 {
+    position:absolute;
+    background:black;
+    opacity:0.2;
+    width:600px;
+    height:200px;
+    z-index:100;
+    display:none;
+    top:200px;
+    left:0;
+}
+#overlayr2 {
+    position:absolute;
+    background:blue;
+    opacity:0.2;
+    width:600px;
+    height:250px;
+    top:400px;
+    z-index:100;
+    display:none;
 }
 
-#head {
-  left: 101px;
-  top: 2px;
-  right: 477px;
-  bottom: 342px;
+#overlayr3 {
+    position:absolute;
+    background:red;
+    opacity:0.2;
+    width:600px;
+    height:160px;
+    top:650px;
+    z-index:100;
+    display:none;
 }
 
-#tronc {
-  left: 3px;
-  top: 148px;
-  right: auto;
-  bottom: auto;
-}
-
-#pied {
-  left: 3px;
-  top: 396px;
-  right: auto;
-  bottom: auto;
-}
-
-map .shadow_area:hover{
-    -moz-box-shadow: inset -2px -2px 2px 2px #CCC;
-    -webkit-box-shadow: inset -2px -2px 2px 2px #CCC;
-    box-shadow: inset -2px -2px 2px 2px #CCC;
-} */
+#class2 {
+    position:absolute;
+    opacity:0;
+    width:600px;
+    height:200px;
+    z-index:100;
+    top:200px;
+    left:0;
