@@ -62,7 +62,6 @@ section, footer{
 #impress h2{
 	font: normal 44px/1.5 'PT Sans Narrow', sans-serif;
 	color:#444648;
-	position:absolute;
 	z-index:10;
 }
 
@@ -210,25 +209,29 @@ section, footer{
 
 
 #impress #upload{
-	width: 620px;
+	width: 690px;
 }
 
 #upload h2{
 	left: 0;
-    text-align: left;
-    top: 170px;
+    text-align: center;
+    top: 10px;
+    width: 100%;
 }
 
 #upload p{
-	left: 32px;
-    padding-top: 255px;
-    width: 280px;
+	font-size: 15px;
+    left: 45px;
+    text-indent: 15px;
+    top: 119px;
+    width: 402px;
 }
 
 #upload img{
 	right: 0;
-    top: 30px;
+    top: 200px;
 }
+
 
 
 /*----------------------------
