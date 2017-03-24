@@ -22,8 +22,9 @@
 
     h1 {
       text-align: center;
-      font-size: 10em;
+      font-size: 3em;
       color: pink;
+      margin:0;
     }
        #body {
         height : 30%;
@@ -34,18 +35,38 @@
        }
 
        #foot {
-         height : 20%;
+         height : 26%;
        }
 
-       .part a:hover, .part a:active {
+       .part:hover {
+         visibility: visible;
          background-color : rgba(0,0,0,0);
-         border: 5px solid pink;
+         border: 3px solid pink;
        }
 
        .part-link {
          display : block;
          width : 100%;
          height : 100%;
+       }
+
+      .part:hover span {
+        visibility : visible;
+      }
+
+      .part span {
+         visibility: hidden;
+       }
+
+       .part a {
+         font-size: 40px;
+         text-decoration: none;
+         color: pink;
+         font-weight: bold;
+         -webkit-transform: rotate(326deg);
+         -moz-transform: rotate(326deg);
+         -o-transform: rotate(326deg);
+         writing-mode: lr-tb;
        }
 
     </style>
@@ -58,13 +79,13 @@
       <img id="img" src="Robot.png" />
       <div class="overlay">
         <div id="head" class="part">
-          <a href="head.html" class="part-link"></a>
+          <a href="activité/head.html" class="part-link"><span>Activité</span></a>
         </div>
         <div id="body" class="part">
-          <a href="body.html" class="part-link"></a>
+          <a href="body.html" class="part-link"><span>Bds / Jeux</span></a>
         </div>
         <div id="foot" class="part">
-          <a href="head.html" class="part-link"></a>
+          <a href="head.html" class="part-link"><span>Blog</span></a>
         </div>
       </div>
     </div>
@@ -74,8 +95,18 @@
       img.src = 'gifTete.gif';
     });
     document.getElementById('body').addEventListener('mouseover', function() {
-      img.src = 'gifBuste.gif';
+      img.src = 'gifBuste2.gif';
     });
+    document.getElementById('head').addEventListener('mouseout', function() {
+      img.src = 'gifTete_envers.gif';
+    });
+
+    document.getElementById('body').addEventListener('mouseout', function() {
+      img.src = 'gifBuste_envers.gif';
+    });
+
+
+
   </script>
   </body>
 </html>
