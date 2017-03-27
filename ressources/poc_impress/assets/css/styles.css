@@ -8,8 +8,6 @@
 
 
 html{
-	background:url('../img/bg.jpg') #fff;
-	background-color: grey;
 }
 
 body{
@@ -69,12 +67,12 @@ section, footer{
 	font: normal 18px/1.3 'Open Sans', sans-serif;
 	color:#27333f;
 	position:absolute;
-	z-index:10;
+
 }
 
 #impress img{
 	position:absolute;
-	z-index:1;
+
 }
 
 .arrow{
@@ -132,11 +130,11 @@ section, footer{
 }
 
 #intro p{
-	font-size: 22px;
-    left: 290px;
-    line-height: 1.6;
-    top: 220px;
-    white-space: nowrap;
+	left: 50px;
+		text-align: justify;
+		text-indent: 16px;
+		top: 150px;
+		width: 365px;
 }
 
 #intro img{
@@ -270,7 +268,7 @@ section, footer{
 -----------------------------*/
 
 
-footer{
+/*footer{
 	background-color: #111111;
 	bottom: 0;
 	box-shadow: 0 -1px 2px #111111;
@@ -315,4 +313,38 @@ footer a i{
 footer a i b{
 	color:#c92020;
 	font-weight: normal;
+}*/
+
+/*Menu checkbox*/
+
+nav{
+margin-top:0px;
+display: flex;
+position: fixed;
+top: 100px;
+transition: top 3s;
+}
+
+input{
+margin-top: -100px;
+display: flex;
+display: none;
+
+}
+
+label{
+margin-top: -60px;
+right: 20px;
+display: flex;
+}
+
+#menu + label::before{
+	content: "Ouvrir";
+}
+
+#menu + label::after{
+	content: "Fermer";
+}
+input:checked ~ nav{
+	top: -100px;
 }
