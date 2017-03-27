@@ -6,6 +6,7 @@
         display : inline-block;
         margin-left: 30%;
         width: 40%;
+        padding: 0;
       }
 
       .overlay {
@@ -21,13 +22,24 @@
     }
 
     h1 {
-      text-align: center;
-      font-size: 3em;
-      color: pink;
+      text-align: left;
+      font-size: 4em;
+      color: black;
       margin:0;
+      padding: 0;
+      position: fixed;
+
+
+    -webkit-transform: rotate(334deg);
+    -moz-transform: rotate(334deg);
+    -o-transform: rotate(334deg);
+    writing-mode: lr-tb;
+
+
     }
        #body {
-        height : 30%;
+         top: 5;
+        height : 27%;
        }
 
        #head {
@@ -35,14 +47,15 @@
        }
 
        #foot {
-         height : 26%;
+         height : 20%;
        }
 
        .part:hover {
-         visibility: visible;
-         background-color : rgba(0,0,0,0);
-         border: 3px solid pink;
+         /*visibility: visible;*/
+         /*background-color : rgba(0,0,0,0);
+         border: 3px solid pink;*/
        }
+
 
        .part-link {
          display : block;
@@ -59,33 +72,46 @@
        }
 
        .part a {
-         font-size: 40px;
          text-decoration: none;
-         color: pink;
-         font-weight: bold;
-         -webkit-transform: rotate(326deg);
-         -moz-transform: rotate(326deg);
-         -o-transform: rotate(326deg);
-         writing-mode: lr-tb;
        }
+
+       span {
+         font-size: 140px;
+         position: fixed;
+         color: white;
+         left: 216px;
+         top: 289px;
+
+       }
+       body {
+        background: lightblue;
+    }
+    a:hover:before {
+        content: '';
+        position: fixed;
+        display: block;
+        top: 0; bottom: 0; left: 0; right: 0;
+        z-index: -1;
+        background-color: pink;
+    }
 
     </style>
 
   </head>
   <body>
-    <h1> Menu de navigation </h1>
+<h1>hack</h1>
 
     <div class="wrapper">
       <img id="img" src="Robot.png" />
       <div class="overlay">
         <div id="head" class="part">
-          <a href="activité/head.html" class="part-link"><span>Activité</span></a>
+          <a href="activité/head.html" class="part-link"><span>ACTIVITES</span></a>
         </div>
         <div id="body" class="part">
-          <a href="body.html" class="part-link"><span>Bds / Jeux</span></a>
+          <a href="body.html" class="part-link"><span>BDS / JEUX</span></a>
         </div>
         <div id="foot" class="part">
-          <a href="head.html" class="part-link"><span>Blog</span></a>
+          <a href="head.html" class="part-link"><span>BLOG</span></a>
         </div>
       </div>
     </div>
@@ -95,7 +121,7 @@
       img.src = 'gifTete.gif';
     });
     document.getElementById('body').addEventListener('mouseover', function() {
-      img.src = 'gifBuste2.gif';
+      img.src = 'gifBuste.gif';
     });
     document.getElementById('head').addEventListener('mouseout', function() {
       img.src = 'gifTete_envers.gif';
