@@ -1,92 +1,108 @@
 <html>
   <head>
     <style>
+
+      html, body {
+      margin:0px;
+      height:100%;
+      }
+
+      @font-face {
+      font-family: 'Logisoso';
+      src: url('Logisoso.ttf');
+      font-weight: normal;
+      font-style: normal;
+      }
+
       .wrapper {
-        position : relative;
-        display : inline-block;
-        margin-left: 30%;
-        width: 40%;
-        padding: 0;
+      position : relative;
+      display : inline-block;
+      margin-left: 30%;
+      width: 40%;
+      padding: 0;
       }
 
       .overlay {
-        position : absolute;
-        width : 100%;
-        height : 100%;
-        top : 0;
-        left : 0;
+      position : absolute;
+      width : 100%;
+      height : 100%;
+      top : 0;
+      left : 0;
       }
 
-    img {
+      img {
       width: 100%;
-    }
+      }
 
-    h1 {
+      h1 {
+      font-family: 'Logisoso';
       text-align: left;
       font-size: 4em;
       color: black;
       margin:0;
       padding: 0;
       position: fixed;
+     -webkit-transform: rotate(334deg);
+     -moz-transform: rotate(334deg);
+     -o-transform: rotate(334deg);
+      writing-mode: lr-tb;
+      }
 
+      #body {
+      top: 5;
+      height : 27%;
+      }
 
-    -webkit-transform: rotate(334deg);
-    -moz-transform: rotate(334deg);
-    -o-transform: rotate(334deg);
-    writing-mode: lr-tb;
+      #head {
+      top: 10px;
+      height : 42%;
+      }
 
+      #foot {
+      height : 20%;
+      }
 
-    }
-       #body {
-         top: 5;
-        height : 27%;
-       }
-
-       #head {
-          height : 42%;
-       }
-
-       #foot {
-         height : 20%;
-       }
-
-       .part:hover {
+      .part:hover {
          /*visibility: visible;*/
          /*background-color : rgba(0,0,0,0);
          border: 3px solid pink;*/
        }
 
 
-       .part-link {
-         display : block;
-         width : 100%;
-         height : 100%;
-       }
+      .part-link {
+      display : block;
+      width : 100%;
+      height : 100%;
+      }
 
       .part:hover span {
-        visibility : visible;
+      visibility : visible;
       }
 
       .part span {
-         visibility: hidden;
+       visibility: hidden;
        }
 
        .part a {
          text-decoration: none;
        }
 
-       span {
+       /*span {
+         font-family: 'Logisoso';
          font-size: 140px;
-         position: fixed;
          color: white;
-         left: 216px;
-         top: 289px;
+         position:absolute;
+         width: 100%;
+         margin: auto;
+         display:flex;
+         justify-content: center;
+       }*/
 
-       }
        body {
         background: lightblue;
-    }
-    a:hover:before {
+      }
+
+      a:hover:before {
         content: '';
         position: fixed;
         display: block;
@@ -94,6 +110,28 @@
         z-index: -1;
         background-color: pink;
     }
+    span {
+      opacity: 0;
+      transition: opacity 2s;
+    }
+    span:hover {
+      opacity: 0.7;
+    }
+
+    a.part-link  {
+      font-family: 'Logisoso';
+      font-size: 160px;
+      color: white;
+      width: 100%;
+      margin: auto;
+      display:flex;
+      justify-content: center;
+    }
+    /*#head a.part-link{
+      padding-top: 75px;
+      height: 215px;
+
+    }*/
 
     </style>
 
@@ -105,10 +143,10 @@
       <img id="img" src="Robot.png" />
       <div class="overlay">
         <div id="head" class="part">
-          <a href="activité/head.html" class="part-link"><span>ACTIVITES</span></a>
+          <a href="activité/head.html" class="part-link"><span>ACTIVITÉS</span></a>
         </div>
         <div id="body" class="part">
-          <a href="body.html" class="part-link"><span>BDS / JEUX</span></a>
+          <a href="body.html" class="part-link"><span>BDS/JEUX</span></a>
         </div>
         <div id="foot" class="part">
           <a href="head.html" class="part-link"><span>BLOG</span></a>
