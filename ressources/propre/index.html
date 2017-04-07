@@ -4,6 +4,7 @@
     <link rel="stylesheet" media="screen and (max-device-width: 700px)" href="smallscreen.css" />
     <link rel="stylesheet" media="screen and (max-device-width: 1024px)" href="mediumscreen.css" />
     <link rel="stylesheet" media="screen and (min-device-width: 1025px)" href="bigscreen.css" />
+    <meta charset="utf-8"/>
   </head>
 
   <body>
@@ -32,30 +33,36 @@
       </label>
       <nav>
         <div class="menu d">
-          <h2> Bienvenue au Hack du garage du Numérique </h2>
+          <h3> Bienvenue au Hack du garage du Numérique </h3>
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
         </div>
       </nav>
     </aside>
-
+    <div class="contact">
+      <a href="http://www.legaragenumerique.fr/contact/"> Contact </a>
+    </div>
+    <!-- SCRIPTS -->
     <script type="text/javascript">
-    var img = document.getElementById('img');
-    document.getElementById('head').addEventListener('mouseenter', function() {
-      img.src = 'gifTete.gif';
-    });
-    document.getElementById('head').addEventListener('mouseleave', function() {
-      img.src = 'gifTete_envers.gif';
-    });
-    document.getElementById('body').addEventListener('mouseover', function() {
-      img.src = 'gifBuste.gif';
-    });
+      var img = document.getElementById('img');
+      document.getElementById('head').addEventListener('mouseenter', function() {
+        img.src = 'gifTete.gif';
+      });
+      document.getElementById('head').addEventListener('mouseleave', function() {
+        img.src = 'gifTete_envers.gif';
+      });
+      document.getElementById('body').addEventListener('mouseover', function() {
+        img.src = 'gifBuste.gif';
+      });
 
-    document.getElementById('body').addEventListener('mouseout', function() {
-      img.src = 'gifBuste_envers.gif';
-    });
+      document.getElementById('body').addEventListener('mouseout', function() {
+        img.src = 'gifBuste_envers.gif';
+      });
     </script>
-
   </body>
+
+
+
+
 
 </html>

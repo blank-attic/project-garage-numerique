@@ -39,7 +39,7 @@ img {
   font-size: 4em;
   color: black;
   margin:0;
-  padding: 0;
+  padding: 2%;
   position: fixed;
   -webkit-transform: rotate(334deg);
   -moz-transform: rotate(334deg);
@@ -101,7 +101,7 @@ body {
   background: lightblue;
 }
 
-a:hover:before {
+.part a:hover:before {
   content: '';
   position: fixed;
   display: block;
@@ -129,7 +129,6 @@ a.part-link  {
 /*#head a.part-link{
 padding-top: 75px;
 height: 215px;
-
 }*/
 
 #head span {
@@ -195,6 +194,8 @@ aside div {
   list-style-type: none;
   margin: auto;
 
+
+
 }
 
 aside nav li {
@@ -209,4 +210,16 @@ aside nav li {
 
 aside nav a:hover {
   color: black;
+}
+
+.contact a {
+  font-family: 'logisosomedium';
+  position: fixed;
+  text-decoration: none;
+  color: black;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 54px;
 }

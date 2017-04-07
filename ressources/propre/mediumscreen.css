@@ -75,7 +75,7 @@ height : 100%;
   background: pink;
 }
 
-a:hover:before {
+.part a:hover:before {
   content: '';
   position: fixed;
   display: block;
@@ -110,4 +110,83 @@ padding-top: 50px;
 
 #body span {
 
+}
+
+
+aside nav {
+  background-color: pink;
+  position:fixed;
+  right:-20%;
+  width:18%;
+  height:100%;
+  top:0px;
+  transition:right 2s;
+}
+
+label {
+  z-index:2;
+  position:fixed;
+  padding:.5em;
+  right :0px;
+  transition:right 2s;
+}
+
+#ole {
+  display: none;
+}
+
+#ole + label::before {
+  content:"	?";
+  font-size: 90px;
+  color: black;
+  top: -83px;
+  position:absolute;
+  right: 10px;
+}
+
+#ole:checked + label::before {
+  font-family: 'arial';
+  font-weight: bold;
+  content:"	X";
+  top:-83px;
+  position:absolute;
+}
+
+#ole:checked ~ nav {
+  right :0px;
+}
+
+#ole:checked + label {
+  right :20%;
+}
+
+aside div {
+  font-family: 'logisosomedium';
+  text-align: justify;
+  padding: 10%;
+  color: pink;
+  font-size: 21px;
+  list-style-type: none;
+  margin: auto;
+
+}
+
+aside nav li {
+  padding: 10%;
+
+}
+ aside div {
+  text-decoration: none;
+  color: black;
+  transition: color 1s;
+}
+
+aside nav a:hover {
+  color: black;
+}
+
+.contact {
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
