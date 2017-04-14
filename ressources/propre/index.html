@@ -39,9 +39,19 @@
         </div>
       </nav>
     </aside>
-    <div class="contact">
-      <a href="http://www.legaragenumerique.fr/contact/"> Contact </a>
-    </div>
+
+    <section>
+      <input id="yolo" type="checkbox">
+      <label for="yolo">
+      </label>
+      <nav>
+        <div class="contact">
+          <h3> Contact </h3>
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+      </nav>
+    </section>
     <!-- SCRIPTS -->
     <script type="text/javascript">
       var img = document.getElementById('img');
@@ -59,6 +69,24 @@
         img.src = 'gifBuste_envers.gif';
       });
     </script>
+
+    <script type="text/javascript">
+
+    function toogleMenu(selector, show) {
+      var menu = document.querySelector(selector);
+      var cb = menu.querySelector('input[type="checkbox"]');
+      cb.checked = show;
+    }
+
+    document.getElementById('ole').addEventListener('click', function() {
+      toogleMenu('section', false);
+    });
+
+    document.getElementById('yolo').addEventListener('click', function() {
+      toogleMenu('aside', false);
+    });
+
+  </script>
   </body>
 
 

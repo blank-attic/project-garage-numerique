@@ -162,7 +162,7 @@ label {
 
 #ole + label::before {
   content:"	?";
-  font-size: 90px;
+  font-size: 80px;
   color: black;
   top: -83px;
   position:absolute;
@@ -186,16 +186,12 @@ label {
 }
 
 aside div {
-  font-family: 'logisosomedium';
   text-align: justify;
   padding: 10%;
   color: pink;
   font-size: 21px;
   list-style-type: none;
   margin: auto;
-
-
-
 }
 
 aside nav li {
@@ -212,14 +208,69 @@ aside nav a:hover {
   color: black;
 }
 
-.contact a {
+/*.contact a {
   font-family: 'logisosomedium';
   position: fixed;
   text-decoration: none;
   color: black;
-  bottom: 0;
+  bottom: 15px;
   left: 0;
   padding: 0;
   font-weight: bold;
   font-size: 54px;
+}*/
+
+/*Section*/
+
+section nav {
+  background-color: pink;
+  position:fixed;
+  bottom:-50%;
+  width:100%;
+  height:50%;
+  transition:bottom 2s;
+}
+
+section label {
+  z-index:2;
+  position:fixed;
+  padding:.5em;
+  bottom:0;
+  left: 14px;
+  transition:bottom 2s;
+}
+
+#yolo {
+  display: none;
+}
+
+#yolo + label::before {
+  content:"Contact";
+  font-family: 'logisosomedium';
+  font-size: 60px;
+  color: black;
+  font-weight: bold;
+  top: -83px;
+  position:absolute;
+
+}
+
+#yolo:checked + label::before {
+  content:"	X";
+  font-size: 80px;
+  font-family: arial;
+  font-weight: bold;
+  top:-83px;
+  position:absolute;
+  left:0;
+}
+
+#yolo:checked ~ nav {
+  bottom:0;
+  left:0;
+}
+
+#yolo:checked + label {
+  bottom:46%;
+  left: 18px;
 }

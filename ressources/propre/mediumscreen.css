@@ -185,8 +185,16 @@ aside nav a:hover {
   color: black;
 }
 
-.contact {
+/*CONTACT */
+
+.contact a {
+  font-family: 'logisosomedium';
   position: fixed;
-  bottom: 0;
+  text-decoration: none;
+  color: black;
+  bottom: 15px;
   left: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 54px;
 }
