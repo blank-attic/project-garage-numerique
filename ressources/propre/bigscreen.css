@@ -11,8 +11,11 @@ html, body {
   url('logisoso-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
+.contact {
+  text-align: center;
+}
+
 .wrapper {
   position : relative;
   display : inline-block;
@@ -148,13 +151,15 @@ aside nav {
   transition:right 2s;
 }
 
-label {
+.menu_ole {
   z-index:2;
   position:fixed;
   padding:.5em;
   right :0px;
   transition:right 2s;
 }
+
+
 
 #ole {
   display: none;
@@ -166,7 +171,7 @@ label {
   color: black;
   top: -83px;
   position:absolute;
-  right: 10px;
+  right: 30px;
 }
 
 #ole:checked + label::before {
@@ -225,13 +230,13 @@ aside nav a:hover {
 section nav {
   background-color: pink;
   position:fixed;
-  bottom:-50%;
+  bottom:-81%;
   width:100%;
-  height:50%;
+  height:81%;
   transition:bottom 2s;
 }
 
-section label {
+.menu_contact {
   z-index:2;
   position:fixed;
   padding:.5em;
@@ -271,6 +276,21 @@ section label {
 }
 
 #yolo:checked + label {
-  bottom:46%;
+  bottom:68%;
   left: 18px;
+}
+
+section h3 {
+  font-family: 'logisosomedium';
+  color: white;
+  text-shadow: 1px 1px 2px #C94A81;
+  font-size: 30px;
+}
+
+section p {
+  font-family: 'logisosomedium';
+  color: white;
+  text-shadow: 2px 2px 2px #C94A81;
+  font-size: 20px;
+  font-weight: bold;
 }

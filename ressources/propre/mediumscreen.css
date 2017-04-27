@@ -187,7 +187,7 @@ aside nav a:hover {
 
 /*CONTACT */
 
-.contact a {
+/*.contact a {
   font-family: 'logisosomedium';
   position: fixed;
   text-decoration: none;
@@ -197,4 +197,105 @@ aside nav a:hover {
   padding: 0;
   font-weight: bold;
   font-size: 54px;
+}*/
+.contact {
+  text-align: center;
+}
+
+
+.envoyer  {
+  font-size: 29px;
+}
+
+.titre {
+  font-size: 29px;
+}
+
+form input {
+  height: 50px;
+}
+
+.contact p {
+  font-size: 29px;
+  text-shadow: 3px black;
+}
+
+#yolo {
+  display: none;
+}
+
+#ole + label::before {
+  top: 284px;
+}
+
+#ole:checked + label::before {
+  top: 284px;
+}
+
+.menu_d p {
+font-size: 40px;
+justify-content: right;
+}
+
+.menu_d h3{
+font-size: 50px;
+justify-content: center;
+}
+
+.contact h3 {
+  text-align: center;
+  font-size: 3em;
+  padding: 0;
+
+}
+#ole:checked ~ nav {
+  right :0px;
+}
+
+#ole:checked + label {
+  right :92%;
+}
+
+aside nav {
+  background-color: lightblue;
+  position:fixed;
+  right:-90%;
+  width:90%;
+  height:100%;
+  top:0px;
+  transition:right 2s;
+  z-index: 3;
+}
+
+.hack h1 {
+  z-index: 4;
+}
+
+#ole {
+  display: none;
+}
+
+#ole + label::before {
+  content:"	?";
+  font-size: 110px;
+  color: black;
+  top: -175px;
+  position:absolute;
+  right: 10px;
+}
+
+#ole:checked + label::before {
+  font-family: 'arial';
+  font-weight: bold;
+  content:"	X";
+  top:-175px;
+  position:absolute;
+}
+
+#ole:checked ~ nav {
+  right :0px;
+}
+
+#ole:checked + label {
+  right :90%;
 }

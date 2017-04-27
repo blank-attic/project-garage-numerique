@@ -101,18 +101,24 @@ display:flex;
 justify-content: center;
 }
 
-span {
+/*span {
 padding-top: 100px;
-}
+}*/
 
 #head span {
-  padding-top: 40%;
+  padding-top: 60%;
+  font-size: 120px;
 }
 
 #body span {
-  padding-top: 17%;
+  padding-top: 10%;
+  font-size: 120px;
 }
 
+#foot span {
+  padding-top: 2%;
+  font-size: 120px;
+}
 
 aside nav {
   background-color: pink;
@@ -186,14 +192,33 @@ aside nav a:hover {
   color: black;
 }
 
-.contact a {
-  font-family: 'logisosomedium';
-  position: fixed;
-  text-decoration: none;
-  color: black;
-  bottom: 15px;
-  left: 0;
+.contact h3 {
+  text-align: center;
+  font-size: 3em;
   padding: 0;
-  font-weight: bold;
-  font-size: 54px;
+
+}
+
+.contact p {
+  text-align: center;
+}
+
+#yolo {
+  display: none;
+}
+
+form input {
+  height: 50px;
+}
+
+.envoyer {
+  font-size: 29px;
+}
+
+#ole:checked ~ nav {
+  right :0px;
+}
+
+#ole:checked + label {
+  right :40%;
 }
