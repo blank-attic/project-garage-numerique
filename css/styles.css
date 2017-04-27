@@ -1,0 +1,864 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+
+}
+
+/* Rôle d'affichage HTML5 pour les anciens navigateurs */
+article, aside, details, figcaption,menu, figure,
+footer, header, hgroup, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /*background: #BCB0C6;*/
+  font-family: 'Raleway', sans-serif;
+}
+
+ol, ul {
+    list-style: none;
+    margin-top: 30px;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*
+Maintenant, voici, lorsque des choses intéressantes commencent à apparaître.
+Nous mettons en place des styles <body> avec une police par défaut et un joli dégradé en arrière-plan.
+Et oui, il y a beaucoup de répétition à cause de -prefixes mais nous ne le faisons pas
+Vouloir laisser quelqu'un derrière.
+*/
+body {
+    font-family: 'PT Sans', sans-serif;
+    min-height: 740px;
+
+    background: rgb(215, 215, 215);
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+    background: -webkit-radial-gradient(rgb(245,222,179), rgb(245,222,179));
+    background:    -moz-radial-gradient(rgb(245,222,179), rgb(245,222,179));
+    background:     -ms-radial-gradient(rgb(245,222,179), rgb(245,222,179));
+    background:      -o-radial-gradient(rgb(245,222,179), rgb(245,222,179));
+    /*background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));*/
+}
+
+/*
+    On ramène des styles de texte
+*/
+b, strong { font-weight: bold }
+i, em { font-style: italic }
+/*
+  On donne aux liens un bel aspect.
+*/
+a {
+  color: inherit;
+text-decoration: none;
+background: #AE74A7;
+text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
+border-radius: 0.2em;
+-webkit-transition: 0.5s;
+-moz-transition: 0.5s;
+-ms-transition: 0.5s;
+-o-transition: 0.5s;
+transition: 0.5s;
+}
+.use{
+  font-size: 30px;
+}
+
+/*a:hover,
+a:focus {
+    background: rgb(239, 28, 199);
+    text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
+}*/
+
+/*
+Affiche un message de secours pour les utilisateurs avec des navigateurs qui ne prennent pas en charge
+Toutes les fonctionnalités requises par celui-ci.
+Tout le contenu sera encore pleinement accessible pour eux.
+Ensuite, nous cachons le message, lorsque le support est détecté dans le navigateur.
+*/
+
+.fallback-message {
+    font-family: sans-serif;
+    line-height: 1.3;
+
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+    background: #EEDC94;
+}
+
+.fallback-message p {
+    margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+
+/*
+S'ssurer qu'il s'affiche correctement partout
+*/
+
+.step {
+    position: relative;
+    width: 900px;
+    padding: 40px;
+    margin: 20px auto;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
+
+    font-family: 'PT Serif', georgia, serif;
+    font-size: 48px;
+    line-height: 1.5;
+}
+
+/*
+    ... et nous améliorons les styles pour impression.js.
+    Fondamentalement, nous supprimons la marge et rendons les étapes inactives un peu plus transparentes.
+*/
+.impress-enabled .step {
+    margin: 0;
+    opacity: 0.3;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+
+.impress-enabled .step.active { opacity: 1 }
+
+/*
+    Ces styles de diapositives ont été fortement inspirés par les diapositives HTML5:
+    Http://html5slides.googlecode.com/svn/trunk/styles.css
+    ;)
+    Ils couvrent tout ce que vous voyez sur les trois premières étapes de la démo.
+*/
+.slide {
+    display: block;
+
+    width: 900px;
+    height: 700px;
+    padding: 40px 60px;
+
+    background-color: #786a6a1a;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+
+    color: rgb(102, 102, 102);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
+
+.slide q {
+    display: block;
+    font-size: 50px;
+    line-height: 72px;
+
+    margin-top: 100px;
+}
+
+.slide q strong {
+    white-space: nowrap;
+}
+
+/*
+
+/*
+    Et maintenant, nous commençons à façonner chaque étape séparément.
+    Je suis d'accord que ce n'est peut-être pas le plus efficace, axé sur l'objet et
+    Un mode de coiffage évolutif, mais la plupart des étapes ont un look tout à fait personnalisé
+    Et les astuces typographiques ici et là, donc ils devaient être stylisés séparément.
+    La première est l'étape du titre avec un grand <h1> (pas de place pour le rembourrage) et certains
+    Positionnement 3D le long de l'axe Z.
+*/
+
+#title {
+    padding: 0;
+}
+
+#title .try {
+    font-size: 64px;
+    /*position: absolute;*/
+    top: -0.5em;
+    left: 1.5em;
+
+    -webkit-transform: translateZ(20px);
+    -moz-transform:    translateZ(20px);
+    -ms-transform:     translateZ(20px);
+    -o-transform:      translateZ(20px);
+    transform:         translateZ(20px);
+}
+
+#title h1 {
+    font-size: 190px;
+
+    -webkit-transform: translateZ(50px);
+    -moz-transform:    translateZ(50px);
+    -ms-transform:     translateZ(50px);
+    -o-transform:      translateZ(50px);
+    transform:         translateZ(50px);
+}
+
+#title .footnote {
+    font-size: 32px;
+}
+
+/*
+    La deuxième étape n'est rien de spécial, juste un texte avec un lien, donc il n'a pas besoin
+    Tout style spécial.
+    Passons aux «grandes pensées» avec du texte centré et des tailles de police personnalisées.
+*/
+#big {
+    width: 600px;
+    text-align: center;
+    font-size: 60px;
+    line-height: 1;
+}
+
+#big b {
+    display: block;
+    font-size: 250px;
+    line-height: 250px;
+}
+
+#big .thoughts {
+    font-size: 90px;
+    line-height: 150px;
+}
+
+
+/*
+    Les «petites idées» ont besoin d'un peu de style.
+*/
+#tiny {
+    width: 500px;
+    text-align: center;
+}
+
+/*
+    Cette étape comporte du texte animé ...
+*/
+#ing { width: 500px }
+
+/*
+    ... donc nous définissons l'affichage sur `inline-block` pour permettre les transformations et
+    Durée de transition à 0,5s ...
+*/
+#ing b {
+    display: inline-block;
+    -webkit-transition: 0.5s;
+    -moz-transition:    0.5s;
+    -ms-transition:     0.5s;
+    -o-transition:      0.5s;
+    transition:         0.5s;
+}
+
+/*
+    ... et nous voulons que le mot «positionnement» se lève un peu lorsque l'étape obtient
+    Cours «présent» ...
+*/
+
+#ing.present .positioning {
+    -webkit-transform: translateY(-10px);
+    -moz-transform:    translateY(-10px);
+    -ms-transform:     translateY(-10px);
+    -o-transform:      translateY(-10px);
+    transform:         translateY(-10px);
+}
+
+/*
+    ... 'tournant' pour tourner un quart de seconde plus tard ...
+*/
+
+#ing.present .rotating {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform:    rotate(-10deg);
+    -ms-transform:     rotate(-10deg);
+    -o-transform:      rotate(-10deg);
+    transform:         rotate(-10deg);
+
+    -webkit-transition-delay: 0.25s;
+    -moz-transition-delay:    0.25s;
+    -ms-transition-delay:     0.25s;
+    -o-transition-delay:      0.25s;
+    transition-delay:         0.25s;
+}
+
+/*
+    ... et «mise à l'échelle» pour diminuer après un autre quart de seconde.
+*/
+#ing.present .scaling {
+    -webkit-transform: scale(0.7);
+    -moz-transform:    scale(0.7);
+    -ms-transform:     scale(0.7);
+    -o-transform:      scale(0.7);
+    transform:         scale(0.7);
+
+    -webkit-transition-delay: 0.5s;
+    -moz-transition-delay:    0.5s;
+    -ms-transition-delay:     0.5s;
+    -o-transition-delay:      0.5s;
+    transition-delay:         0.5s;
+}
+
+/*
+    L'étape de l'imagination est de nouveau une taille de police ennuyeuse.
+*/
+
+#imagination {
+    width: 600px;
+}
+
+#imagination .imagination {
+    font-size: 78px;
+}
+
+/*
+Il n'y a rien de vraiment spécial sur «utiliser la source, étape de Luke» aussi,
+Sauf peut-être de l'histoire de Yoda.
+
+Comme vous pouvez le voir ci-dessous, je l'ai codé dans l'URL des données.
+Ce n'est pas la meilleure façon de servir les images, mais parce que c'est juste celui-ci
+J'ai décidé qu'il vaudrait bien avoir cela de cette façon.
+Assurez-vous de ne pas copier aveuglément cette approche.
+*/
+#source {
+    width: 700px;
+    padding-bottom: 300px;
+
+    /* Yoda Icon :: Pixel Art from Star Wars http://www.pixeljoint.com/pixelart/1423.htm */
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAMAAACwUBm+AAAAAXNSR0IArs4c6QAAAKtQTFRFsAAAvbWSLUUrLEQqY1s8UYJMqJ1vNTEgOiIdIzYhjIFVLhsXZ6lgSEIsP2U8JhcCVzMsSXZEgXdOO145XJdWOl03LzAYMk4vSXNExr+hwcuxRTs1Qmk+RW9Am49eFRANQz4pUoNMQWc+OSMDTz0wLBsCNVMxa2NBOyUDUoNNSnlEWo9VRGxAVzYFl6tXCggHbLNmMUIcHhwTXkk5f3VNRT8wUT8xAAAACQocRBWFFwAAAAF0Uk5TAEDm2GYAAAPCSURBVHja7d3JctNAFIZRMwRCCGEmzPM8z/D+T8bu/ptbXXJFdij5fMt2Wuo+2UgqxVmtttq5WVotLzBgwIABAwYMGDCn0qVqbo69psPqVpWx+1XG5iaavF8wYMCAAQMGDBgwi4DJ6Y6qkxB1HNlcN3a92gbR5P2CAQMGDBgwYMCAWSxMlrU+UY5yu2l9okfV4bAxUVbf7TJnAwMGDBgwYMCAAbMLMHeqbGR82Zy+VR1Ht81nVca6R+UdTLaU24Ruzd3qM/e4yjnAgAEDBgwYMGDA7AJMd1l/3NRdVGcj3eX/2WEhCmDGxnM7yqygu8XIPjJj8iN/MGDAgAEDBgwYMAuDGb8q0RGlLCHLv1t9qDKWn3vdNHVuEI6HPaxO9Jo3GDBgwIABAwYMmIXBdC9ShGgMk+XnkXUeuGcsP/e1+lhNnZsL/G5Vs3OAAQMGDBgwYMCAWSxMR3SzOmraG5atdy9wZKzb+vg16qyqe2FltbnAgAEDBgwYMGDALAxmTJSuN3WA76rnVca6GTnemGN1WoEBAwYMGDBgwIBZGMxUomy4+xO899V4LAg5Xnc2MGDAgAEDBgwYMGA218Wq+2K1LDqvY9xZu8zN8fICdM6btYABAwYMGDBgwIABMzfH0+pGU5afze2tXebmeAfVz+p8BQYMGDBgwIABAwbMPBzZ+oWmfJrln1273FhkbHzee9WWbw7AgAEDBgwYMGDALAKm43hcdctKgblcPamOhuXnXlY5Xs6bsW4FGyQCAwYMGDBgwIABswiYMceZKgvMo+h8mrHLTdn676rj+FEFoTtHd8MwOxEYMGDAgAEDBgyYRcBM5UhXqiymW3R3c9ARhWO/OmjqfjVZy+xEYMCAAQMGDBgwYBYG073OnCV0RFNhMhaOa9WfKmOB6XjHMN1tQmaAAQMGDBgwYMCA2VWY7vXjz1U4croAzgPztwIDBgwYMGDAgAEDZhswh035NBw59Dww3RgYMGDAgAEDBgwYMJuD6f4tXT7NUqfCdBvZLkxXdgQGDBgwYMCAAQNmt2DGj8WzwAfV/w7T/aq7mxwwYMCAAQMGDBgwuwqTOo7uTwTngflSzQ3TdaJvAwEDBgwYMGDAgAED5gSvgbyo5oHZ4Pc+gwEDBgwYMGDAgAEzhOm+5G0qTGaAAQMGDBgwYMCAAXNaMOcnls3tNwWm+zRzp54NDBgwYMCAAQMGDJh5YNL36k1TLuGvVq+qnKMbS5n7tulT9asCAwYMGDBgwIABA2ZumKuztLnjgQEDBgwYMGDAgNl5mH/4/ltKA6vBNAAAAABJRU5ErkJggg==);
+    /*background-position: bottom right;*/
+    background-repeat: no-repeat;
+}
+
+#source q {
+    font-size: 60px;
+}
+
+/*
+Et l'étape "c'est en 3D" apporte de nouveau une typographie en 3D - juste pour le plaisir.
+Parce que nous voulons positionner des éléments <span> en 3D, nous mettons Transform-Style dans
+`Preserve-3d` sur le paragraphe.
+Il n'est pas nécessaire pour les navigateurs webkit, mais c'est dans Firefox. C'est difficile à dire
+Quel comportement est correct car 3D transforme la spécification n'est pas très clair à ce sujet.
+*/
+#its-in-3d p {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style:    preserve-3d; /* Y U need this Firefox?! */
+    -ms-transform-style:     preserve-3d;
+    -o-transform-style:      preserve-3d;
+    transform-style:         preserve-3d;
+}
+
+/*
+Au-dessous de nous, chaque mot est séparé le long de l'axe Z et nous voulons qu'il se transforme
+Par défaut en 0.5s lorsque l'étape reçoit une classe «présente».
+Une idée simple, mais beaucoup de styles et de préfixes.
+*/
+#its-in-3d span,
+#its-in-3d b {
+    display: inline-block;
+    -webkit-transform: translateZ(40px);
+    -moz-transform:    translateZ(40px);
+    -ms-transform:     translateZ(40px);
+    -o-transform:      translateZ(40px);
+     transform:        translateZ(40px);
+
+    -webkit-transition: 0.5s;
+    -moz-transition:    0.5s;
+    -ms-transition:     0.5s;
+    -o-transition:      0.5s;
+    transition:         0.5s;
+}
+
+#its-in-3d .have {
+    -webkit-transform: translateZ(-40px);
+    -moz-transform:    translateZ(-40px);
+    -ms-transform:     translateZ(-40px);
+    -o-transform:      translateZ(-40px);
+    transform:         translateZ(-40px);
+}
+
+#its-in-3d .you {
+    -webkit-transform: translateZ(20px);
+    -moz-transform:    translateZ(20px);
+    -ms-transform:     translateZ(20px);
+    -o-transform:      translateZ(20px);
+    transform:         translateZ(20px);
+}
+
+#its-in-3d .noticed {
+    -webkit-transform: translateZ(-40px);
+    -moz-transform:    translateZ(-40px);
+    -ms-transform:     translateZ(-40px);
+    -o-transform:      translateZ(-40px);
+    transform:         translateZ(-40px);
+}
+
+#its-in-3d .its {
+    -webkit-transform: translateZ(60px);
+    -moz-transform:    translateZ(60px);
+    -ms-transform:     translateZ(60px);
+    -o-transform:      translateZ(60px);
+    transform:         translateZ(60px);
+}
+
+#its-in-3d .in {
+    -webkit-transform: translateZ(-10px);
+    -moz-transform:    translateZ(-10px);
+    -ms-transform:     translateZ(-10px);
+    -o-transform:      translateZ(-10px);
+    transform:         translateZ(-10px);
+}
+
+#its-in-3d .footnote {
+    font-size: 32px;
+
+    -webkit-transform: translateZ(-10px);
+    -moz-transform:    translateZ(-10px);
+    -ms-transform:     translateZ(-10px);
+    -o-transform:      translateZ(-10px);
+    transform:         translateZ(-10px);
+}
+
+#its-in-3d.present span,
+#its-in-3d.present b {
+    -webkit-transform: translateZ(0px);
+    -moz-transform:    translateZ(0px);
+    -ms-transform:     translateZ(0px);
+    -o-transform:      translateZ(0px);
+    transform:         translateZ(0px);
+}
+
+/*
+La dernière étape est une vue d'ensemble.
+Il n'y a pas de contenu, alors nous nous assurons qu'il n'est pas visible car nous voulons
+Pour pouvoir cliquer sur d'autres étapes.
+*/
+#overview { display: none }
+
+/*
+Nous rendons également d'autres étapes visibles et leur donnons un curseur de pointeur à l'aide du
+Classe `impression-sur-classe '.
+*/
+.impress-on-overview .step {
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+/*
+Maintenant, lorsque nous avons toutes les étapes de style, allons donner aux utilisateurs un indice comment naviguer
+Autour de la présentation.
+La meilleure façon de le faire serait d'utiliser JavaScript, de montrer un indice différé pour un
+Les utilisateurs de la première fois, puis le cacher et stocker un état dans cookie ou localStockage ...
+Mais je voulais avoir du CSS amusant et éviter les scripts supplémentaires ...
+Permettez-moi de l'expliquer en premier, alors peut-être que la magie de transition sera plus lisible
+Lorsque vous lisez le code.
+Tout d'abord, je voulais que l'indice n'apparaisse que lorsque l'utilisateur est inactif pendant un certain temps.
+Vous ne pouvez pas détecter l'état «inactif» dans CSS, mais j'ai retardé l'apparition des
+Indice de 5s en utilisant le délai de transition.
+Vous ne pouvez pas non plus détecter dans CSS si l'utilisateur est un visiteur pour la première fois, alors j'ai dû
+Je suppose que je ne montrerai que l'indice sur la première étape. Et quand
+L'étape est changée Cacher l'indice, car je peux supposer que cet utilisateur déjà
+Sait comment naviguer.
+Pour le résumer - l'indice est affiché lorsque l'utilisateur est sur la première étape pour plus longtemps
+5 secondes.
+L'autre problème que j'avais était causé par le fait que je voulais que l'indice disparaisse
+dedans et dehors. Il peut être facilement réalisé en transition de la propriété d'opacité.
+Mais cela signifiait également que l'indice était toujours sur l'écran, même si totalement
+transparent. Il a couvert une partie de l'écran et vous ne pouvez pas cliquer correctement
+à travers.
+Malheureusement, vous ne pouvez pas faire une transition entre l'affichage `block` et` none` en pur
+CSS, j'ai donc besoin d'un moyen de non seulement de faire disparaître l'indice, mais aussi de le sortir
+l'écran.
+J'ai résolu ce problème en positionnant l'indice sous le bas de l'écran
+Avec CSS transformer et le déplacer pour le montrer. Mais je ne voulais pas non plus ce mouvement
+Pour être visible. Je voulais que l'intuition ne s'efface que sur le visuel, alors j'ai retardé
+Le fondu en transition, donc il commence lorsque l'indice est déjà correct
+Position sur l'écran.
+Je sais, cela semble compliqué ... peut-être serait-il plus facile avec le code?
+*/
+
+.hint {
+    /*
+    Nous cachons l'indice jusqu'à ce que la présentation commence et que les navigateurs ne supportent pas
+    Impression.js, car ils auront une vue défilable linéaire ...
+    */
+    display: none;
+
+    /*
+       ... et lui donner une position fixe et de beaux styles.s.
+    */
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 200px;
+
+    background: rgba(0,0,0,0.5);
+    color: #EEE;
+    text-align: center;
+
+    font-size: 50px;
+    padding: 20px;
+
+    z-index: 100;
+
+    /*
+        Par défaut, nous ne voulons pas que l'indice soit visible, donc nous le rendons transparent ...
+    */
+    opacity: 0;
+
+    /*
+         ... et positionnez-le en dessous du bas de l'écran (par rapport à sa position fixe)
+    */
+    -webkit-transform: translateY(400px);
+    -moz-transform:    translateY(400px);
+    -ms-transform:     translateY(400px);
+    -o-transform:      translateY(400px);
+    transform:         translateY(400px);
+
+    /*
+    Maintenant, imaginons que l'indice est visible et que nous voulons disparaître et sortir
+    De l'écran.
+    Nous définissons donc la transition sur la propriété d'opacité avec une durée de 1 s et une autre
+    La transition sur la propriété de transformation a été retardée de 1s donc elle se produira après la disparition
+    Sur l'opacité terminée.
+    De cette façon, l'utilisateur ne verra pas l'indice en cours de bas de page.
+    */
+    -webkit-transition: opacity 1s, -webkit-transform 0.5s 1s;
+    -moz-transition:    opacity 1s,    -moz-transform 0.5s 1s;
+    -ms-transition:     opacity 1s,     -ms-transform 0.5s 1s;
+    -o-transition:      opacity 1s,      -o-transform 0.5s 1s;
+    transition:         opacity 1s,         transform 0.5s 1s;
+}
+
+/*
+     Maintenant, nous "activons" l'indice lorsque la présentation est initialisée ...
+*/
+.impress-enabled .hint { display: block }
+
+/*
+   ... et nous allons le montrer lorsque la première étape (avec id 'bored') est active.
+*/
+.impress-on-bored .hint {
+    /*
+    Nous supprimons la transparence et positionnez l'indice dans son état par défaut
+    position.
+    */
+    opacity: 1;
+
+    -webkit-transform: translateY(0px);
+    -moz-transform:    translateY(0px);
+    -ms-transform:     translateY(0px);
+    -o-transform:      translateY(0px);
+    transform:         translateY(0px);
+
+    /*
+    Maintenant, pour une mise en évanouissement, nous avons la situation opposée de l'un
+      au dessus.
+      D'abord après un délai de 4,5s, nous animons la propriété transform pour déplacer l'indice
+      Dans sa position correcte et après cela, nous l'évanouissons avec une opacité
+      transition.
+    */
+    -webkit-transition: opacity 1s 5s, -webkit-transform 0.5s 4.5s;
+    -moz-transition:    opacity 1s 5s,    -moz-transform 0.5s 4.5s;
+    -ms-transition:     opacity 1s 5s,     -ms-transform 0.5s 4.5s;
+    -o-transition:      opacity 1s 5s,      -o-transform 0.5s 4.5s;
+    transition:         opacity 1s 5s,         transform 0.5s 4.5s;
+}
+
+/*
+    And as the last thing there is a workaround for quite strange bug.
+    It happens a lot in Chrome. I don't remember if I've seen it in Firefox.
+    Sometimes the element positioned in 3D (especially when it's moved back
+    along Z axis) is not clickable, because it falls 'behind' the <body>
+    element.
+    To prevent this, I decided to make <body> non clickable by setting
+    pointer-events property to `none` value.
+    Value if this property is inherited, so to make everything else clickable
+    I bring it back on the #impress element.
+    If you want to know more about `pointer-events` here are some docs:
+    https://developer.mozilla.org/en/CSS/pointer-events
+    There is one very important thing to notice about this workaround - it makes
+    everything 'unclickable' except what's in #impress element.
+    So use it wisely ... or don't use at all.
+*/
+
+
+/*------------------#Menu------------------*/
+
+
+body h1 {
+  text-align: center;
+  margin-top: 35px;
+  color: #333333;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px #f2f2f3, -1px -1px #f2f2f3;
+}
+
+.nav {
+  width: 50px;
+  height: 100%;
+  position: fixed;
+  left: -2em;
+  top: 0;
+  z-index: 1000;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+          background: #AE74A7;
+}
+
+.icon {
+  background: #FFF8AD;
+position: absolute;
+left: 0;
+top: 0;
+z-index: 990;
+height: 100%;
+
+}
+.icon li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  list-style-type: none;
+}
+.icon a {
+  background: #D24CC2;
+  margin-top: -40px;
+  display: block;
+  width: 64px;
+  height: 964px;
+  line-height: 64px;
+  text-align: center;
+  font-size: 1.6em;
+  color: ##db64db;
+  text-shadow: 0 1px 0 black;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.icon a:hover {
+  color: white;
+  -webkit-transform: translateX(10px) scale(1.2);
+          transform: translateX(10px) scale(1.2);
+}
+
+.nav:hover .text {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+.text {
+  position: absolute;
+  left: 63px;
+  top: 0;
+  z-index: 980;
+  height: 100%;
+  background: #AE74A7;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  -webkit-transition: -webkit-transform .24s linear;
+  transition: -webkit-transform .24s linear;
+  transition: transform .24s linear;
+  transition: transform .24s linear, -webkit-transform .24s linear;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-origin: left;
+  transform-origin: left;
+  -webkit-transform: perspective(1000px) rotateY(90deg);
+  transform: perspective(1000px) rotateY(90deg);
+  left: 43px;
+}
+.text li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.text a {
+  display: block;
+  width: 200px;
+  height: 64px;
+  line-height: 64px;
+  text-indent: 1em;
+  font-size: 1.4em;
+  text-decoration: none;
+  color: Black;
+  text-shadow: 0 1px 0 black;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  margin-top: 60px;
+}
+
+.text a:hover {
+  color: white;
+  -webkit-transform: translateX(-14px);
+          transform: translateX(-14px);
+}
+
+.nav:hover .info {
+  left: 0;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-in 0.1s;
+  transition: opacity 0.5s ease-in 0.1s;
+}
+
+.info {
+  position: absolute;
+  padding-left: 2em;
+  bottom: 30px;
+  z-index: 999;
+  width: 264px;
+  color: white;
+  text-align: center;
+  line-height: 1.6;
+  opacity: 0;
+}
+.info .logo p {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background: black;
+  color: #424242;
+  opacity: .6;
+  overflow: hidden;
+  text-align: center;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  font-size: 2em;
+  text-shadow: -1px -1px #4f4f4f, 1px 1px #121212;
+}
+.info .logo p:hover {
+  opacity: 1;
+  color: white;
+  text-shadow: -1px -1px #575757, 1px 1px #121212;
+}
+.info .name {
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #424242;
+  text-shadow: -1px -1px #4f4f4f, 1px 1px #121212;
+  margin-left: -50px;
+}
+.info .quote {
+  color: #444;
+  text-shadow: 1px 1px #121212;
+}
+.info .social a {
+  font-size: 2em;
+  color: #333333;
+  letter-spacing: .5em;
+  text-shadow: 1px 1px #454545, -1px -1px #121212;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.info .social a:hover {
+  color: white;
+  text-shadow: -1px -1px #575757, 1px 1px #121212;
+}
+
+/*
+N'a ajouté qu'une requête de navigation pour la hauteur bc. La largeur est bien
+(Couvre la largeur totale de la fenêtre de 270px) jusqu'à 220px.
+La section d'informations de navigation inférieure est cachée lorsque la hauteur de l'écran
+Atteint 550px ou moins. Nav fonctionne encore comme un fly-out
+*/
+@media screen and (max-height: 550px) {
+  .info {
+    display: none;
+  }
+}
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 7.5vw;
+  }
+}
+
+/*Body des activités */
+.body1{
+background:radial-gradient(rgb(245,222,179), rgb(255,160,122));
+}
+.body2{
+background:radial-gradient(rgb(233,150,122 ), rgb( 233,150,122));
+}
+.body3{
+background: radial-gradient(rgb(245,222,179), rgb( 240,128,128));
+}
+.body4{
+background:radial-gradient(rgb( 245,222,179), rgb( 205,92,92));
+}
+
+/*Style hover des activité*/
+
+.act1hover:hover, .act1hover:focus{
+  background: rgb(241, 169, 160);
+  text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
+}
+
+.act2hover:hover, .act2hover:focus{
+  background: rgb(224, 130, 131);
+  text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
+}
+
+.act3hover:hover, .act3hover:focus{
+  background: rgb(221, 147, 83);
+  text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
+}
+
+.act4hover:hover, .act4hover:focus{
+  background: rgb(249, 191, 59);
+  text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
+}
+
+.acthomehover:hover, .acthomehover:focus{
+  background: rgb(190, 190, 190);
+  text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
+}
