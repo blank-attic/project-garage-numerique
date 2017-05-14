@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <script type="text/javascript">
+      function newPage()
+      {location.assign("/home/alfoussein_doucoure/project-garage-numerique/ressources/poc_impress/Activité1.html");
+    }
+    </script> -->
+
+    <!-- <script type="text/javascript">
+    keypress(function(event){
+     // stop inadvertant form submission
+     if (event.keycode == "37"){
+       event.preventDefault ? event.preventDefault() : event.returnValue = false;
+       location.assign("/home/alfoussein_doucoure/project-garage-numerique/ressources/poc_impress/Activité1.html");
+
+});
+    </script> -->
+
+    <script>
+
+window.addEventListener("keyup", checkKeyPress);
+// The parameters of the event listener are event, function to run, useCapture (optional).
+// This event listener runs checkKeyPress function when a key is pressed down
+// You can use keydown or keyup to check what key has been pressed or released
+
+
+// this function checks to see if the key "down" key has been pressed
+function checkKeyPress(key) {
+  console.log(key.keyCode);
+ if (key.keyCode == "40") {
+location.assign("/home/alfoussein_doucoure/project-garage-numerique/ressources/poc_impress/Activité1.html");
+ // 65 is the keycode that is returned when the 'a' letter key is pressed
+ // if you use keypress event instead of keydown/up then you must use ASCII code instead of keycode
+ }
+}
+
+</script>
+<style media="screen">
+html{
+  background-color: black;
+}
+#background{
+  position: absolute;
+  background-size: cover;
+  background-repeat: repeat;
+  display: block;
+
+}
+
+</style>
+    <title>
+
+    </title>
+  </head>
+  <body>
+    <video preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+      <source src="/home/alfoussein_doucoure/project-garage-numerique/ressources/poc_impress/at.mp4" type="video/mp4">
+    </video>
+  <!-- <input type="button" value="click for new page" onclick="newPage()"> -->
+  </body>
+</html>
